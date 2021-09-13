@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd 
 from multiprocessing import Process, Manager
 
-from generage_bc_dicts import free_divergence,write_pkl
+from generate_bc_dicts import free_divergence,write_pkl
 
 def get_shift_bc_info(bc1_part, bc1_shift, bc1_edit_dict_part,pos_cfg,bc_edit_dist1=1):
     #umi_bc_len = [10,(8,9,10,11),8,6]
@@ -159,7 +159,14 @@ def preprocess_fastq_chunk(output_dir, prefix, bcset, bc4, counts, config, retur
     tag_edit_dist_atac = int(tag_edit_dist[0])
     tag_edit_dist_rna = int(tag_edit_dist[1])
 
-
+    def check_pkl(barcode_n):
+        if not os.path.exists(bcset+'/barcode%s.txt'%barcode_n):
+            sys.exit('Error: No barcode%s.txt'%barcode_n)
+        elif not os.path.exists(bcset+'/bc_dict_%s_%s.pkl'%(barcode_n,method)):
+            write_pkl(method,bcset)
+    check_pkl('1')
+    check_pkl('2')
+    check_pkl('3')
 
     with open(bcset+'/bc_dict_1_%s.pkl'%method, 'rb') as f:
         bc1_edit_dict = pickle.load(f)

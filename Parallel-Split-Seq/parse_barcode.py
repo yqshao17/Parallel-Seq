@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd 
 from multiprocessing import Process, Manager
 
-from generage_bc_dicts import free_divergence,write_pkl
+from generate_bc_dicts import free_divergence,write_pkl
 
 
 def get_min_edit_dists(bc,edit_dict,max_d=3):
