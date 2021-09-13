@@ -16,6 +16,12 @@ python pipeline.py mkref \
     --genes hg38.gtf mm10.gtf
 ```
 
+Generate bed files as ATAC bin features
+```
+bedtools makewindows -g Data/hg38.chrom.sizes -w 2000 > Data/hg38_2k_windows.bed
+bedtools makewindows -g Data/mm10.chrom.sizes -w 2000 > Data/mm10_2k_windows.bed
+```
+
 ## prepare input files
 1.  prepare fastq files
 
