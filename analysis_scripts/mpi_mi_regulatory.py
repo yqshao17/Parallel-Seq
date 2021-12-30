@@ -1,4 +1,3 @@
-#source ~/yanqiu/py3.sh
 import pandas as pd
 import scanpy as sc
 import seaborn as sns
@@ -296,7 +295,7 @@ if __name__=='__main__':
             gene_around_peaks=pickle.load(open('%sgene_around_peaks_%dk.pkl'%(inprefix, bin_size),'rb'))
         else:
             print(datetime.datetime.now(),'Getting around peaks')
-            gene_info = pickle.load(open('gene_info_hg.pkl', 'rb'))
+            gene_info = pickle.load(open('gene_info.pkl', 'rb'))
             gene_around_peaks = get_around_peaks(gene_info, rna, atac, inprefix, bin_size=bin_size)
 
         if 'gc_content' not in atac.var.columns:
