@@ -1,3 +1,4 @@
+#source ~/yanqiu/py3.sh
 import pandas as pd
 import scanpy as sc
 import seaborn as sns

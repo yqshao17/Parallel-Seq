@@ -12,7 +12,7 @@ mkdir $outdir/mutation
 mkdir $outdir/bam/${outprefix}
 mkdir $outdir/mutation/${outprefix}
 python split_cluster_bam.py \
-    -s $sample \
+    -b $sample \
     -o $outdir/bam/${outprefix} \
     -c $meta \
     --datatype ATAC

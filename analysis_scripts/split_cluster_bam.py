@@ -11,7 +11,7 @@ split RNA bam files to cluster bam files
 
 usage
 
-python split_cluster_bam.py -i ../output/ \
+python split_cluster_bam.py \
     -s TL201008_new,TL20201006new  \
     -o ../processed/TL_sp_lt/rna_bw2 \
     -c ../processed/TL_sp_lt/sp_lt_seurat_leiden.txt
