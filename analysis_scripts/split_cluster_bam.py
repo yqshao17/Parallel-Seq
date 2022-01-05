@@ -71,7 +71,10 @@ write_bam = {}
 if samples:
     files = get_bam_files(samples[0], args.datatype)
 elif bamfiles:
-    files=bamfiles.split(',')
+    if glob(bamfiles):
+        files=glob(bamfiles)
+    else:
+        files=bamfiles.split(',')
 
 inbam=pysam.Samfile(files[0])
 for c in unique_clusters:
