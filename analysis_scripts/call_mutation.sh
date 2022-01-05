@@ -1,7 +1,6 @@
-#indir=$1
-sample=$1 #TL210630
-outdir=$2 #/Share2/home/zhangqf5/yanqiu/scAR/processed/TLm4
-outprefix=$3 #0630
+bamfiles=$1 #sample1.bam,sample2.bam
+outdir=$2 
+outprefix=$3 
 region=$4
 meta=$5 #two columns with annotaiton of Normal/Tumor
 
@@ -12,7 +11,7 @@ mkdir $outdir/mutation
 mkdir $outdir/bam/${outprefix}
 mkdir $outdir/mutation/${outprefix}
 python split_cluster_bam.py \
-    -b $sample \
+    -b $bamfiles \
     -o $outdir/bam/${outprefix} \
     -c $meta \
     --datatype ATAC
