@@ -48,7 +48,7 @@ bedtools makewindows -g Data/mm10.chrom.sizes -w 2000 > Data/mm10_2k_windows.bed
 ## 2. prepare input files
 1.  prepare fastq files
 
-    For Parallel-Seq, you should convert raw data to fastq files with barcodes in the read name. For Parallel-Split-Seq, skip this step.
+    You should convert raw data to fastq files with barcodes in the read name.
 ```
 python dsc_convert.py \
 -i test/parallel/raw_data/ATAC_S1_L001 \
